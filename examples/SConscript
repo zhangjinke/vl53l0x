@@ -1,0 +1,9 @@
+from building import *
+
+cwd     = GetCurrentDir()
+src     = Glob('*.c') + Glob('*.cpp')
+CPPPATH = [cwd]
+
+group = DefineGroup('VL53L0X', src, depend = ['VL53L0X_USING_EXAMPLE'], CPPPATH = CPPPATH)
+
+Return('group')
